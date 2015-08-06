@@ -1,0 +1,17 @@
+- title t('.title')
+
+%ul.qualifications
+  - @qualifications.each do |qualification|
+    %li.qualification
+      - subjects = qualification['subjects']
+      - if subjects.present?
+        = link_to qualification['name'], 'javascript:void(0)', title: t('.to_show'), class: 'show_subjects', data: {show: t('.to_show'), hide: t('.to_hide')}
+        .subjects
+          %ul.subject_list
+            - subjects.each do |subject|
+              - color = subject['colour'].present? ? subject['colour'] : 'white'
+              %li.subject{style: "color: #{color}"}= subject['title']
+      - else
+        .name= qualification['name']
+
+= link_to t('.reload'), root_path, class: 'reload'

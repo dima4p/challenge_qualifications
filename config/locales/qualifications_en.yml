@@ -1,0 +1,9 @@
+---
+en:
+  qualifications:
+    index:
+      parse_error: 'Parse error occured'
+      reload: Reload
+      title: Listing of Qualifications
+      to_hide: 'Click to hide the subjects'
+      to_show: 'Click to view the subjects'
